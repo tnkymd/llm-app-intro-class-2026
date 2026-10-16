@@ -28,15 +28,14 @@ def ask_once(question):
     """質問を1つだけ送り、回答とトークン数を返す。"""
     client = make_client()
     # TODO: Responses APIを呼び出す。下のコメントを外し、raise の行を消す。
-    # response = client.responses.create(
+    response = client.responses.create(
         # model=MODEL,
         # reasoning={'effort': 'none'},
         # instructions=INSTRUCTIONS,
-        # input=question,  # 今回の質問の文字列だけを送る
+        # input=question,   #今回の質問の文字列だけを送る
         # max_output_tokens=600,
-        # store=False,  # 送った内容をOpenAI側に保存しない
+        # store=False,   #送った内容をOpenAI側に保存しない
     # )
-    raise NotImplementedError('TODO: one_shot.py の ask_once() で、APIの呼び出しを完成させる')
     # 途中で切れた回答や、空の回答は失敗として扱う。
     if response.status != 'completed' or response.output_text.strip() == '':
         raise ValueError('回答が完了しませんでした。質問を短くして試してください。')

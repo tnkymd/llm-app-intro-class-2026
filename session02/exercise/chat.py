@@ -71,8 +71,7 @@ def main():
 
         # 1. 今回の質問を履歴に追加する。
         # TODO: 質問を history に追加する。下のコメントを外し、raise の行を消す。
-        # history.append({'role': 'user', 'content': question})
-        raise NotImplementedError('TODO: chat.py の main() で、履歴への追加を完成させる')
+        history.append({'role': 'user', 'content': question})
 
         # 2. 履歴をまとめて送る。
         try:
